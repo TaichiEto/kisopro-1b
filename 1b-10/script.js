@@ -33,13 +33,54 @@ function displayNumbers(){
     alert(x);
 }
 
-// function janken(){
-//     let hands = ["グー","チョキ","パー"];
-//     let cpushand = hands[Math.floor(Math.random() * 3)];
-//     let playershand = document.getElementById("playerHand").value;
-//     if (cpushand == "グー") {
-//         if (playershand == "パー"){
-//             alert()
-//         }
-//     }
-// }
+function janken(){
+    let playerHand = convertHands(document.getElementById("playerHand").value);
+    let cpuhand = Math.floor(Math.random() * 3);
+    if (cpuhand == 0){
+        if(playerHand == 2){
+            alert("私は「グー」であなたの勝ちです");
+        }
+        else if(playerHand == 0){
+            alert("私は「グー」であいこです");
+        }
+        else{
+            alert("私は「グー」であなたの負けです");
+        }
+    }
+
+    else if(cpuhand == 1){
+        if(playerHand == 2){
+            alert("私は「チョキ」であなたの負けです");
+        }
+        else if(playerHand == 0){
+            alert("私は「チョキ」であなたの勝ちです");
+        }
+        else{
+            alert("私は「チョキ」であいこです");
+        }
+    }
+
+    else {
+        if(playerHand == 2){
+            alert("私は「パー」であいこです");
+        }
+        else if(playerHand == 0){
+            alert("私は「パー」であなたの負けです");
+        }
+        else{
+            alert("私は「パー」であなたの勝ちです");
+        }
+    }
+}
+
+function convertHands(hand){
+    if (hand == "グー"){
+        return 0;
+    }
+    else if (hand == "チョキ"){
+        return 1;
+    }
+    else if (hand == "パー"){
+        return 2;
+    }
+}
