@@ -1,3 +1,4 @@
+let count = 0;
 function showMap(){
     // "map" divに地図を作成し、指定した場所と縮尺で表示する
     let latitude = parseFloat(document.getElementById("latitude").value);
@@ -16,6 +17,8 @@ function showMap(){
     function click_callback(e) {
         //緯度と経度を表示
         alert(e.latlng);
+        count += 1
+        L.marker(e.latlng).bindPopup(String(count)).addTo(map);
     }
      
     // 地図がクリックされたらclick_callback()関数を呼ぶ
