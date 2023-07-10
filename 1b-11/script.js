@@ -2,7 +2,7 @@ let count = 0;
 function showMap(){
     // "map" divに地図を作成し、指定した場所と縮尺で表示する
     let latitude = parseFloat(document.getElementById("latitude").value);
-    let longtitude = parseFloat(document.getElementById("longtitude").value); 
+    let longitude = parseFloat(document.getElementById("longtitude").value); 
     let magnification = parseFloat(document.getElementById("magnification").value);
 
     if(magnification <= 0){
